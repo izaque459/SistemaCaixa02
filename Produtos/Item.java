@@ -4,7 +4,7 @@ public class Item implements IProduto {
     private String nome = new String();
     private String preco = new String();
 
-    Item(String nome, String preco){
+    public Item(String nome, String preco){
         this.nome=nome;
         this.preco=preco;
     }
