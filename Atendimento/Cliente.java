@@ -6,4 +6,16 @@ public class Cliente implements ICliente{
     public void compra(String linha){
         descricao = descricao + "\n "+linha;
     }
+
+    public String exibeCompras(){
+        return descricao;
+    }
+
+    public boolean adicionaItens(){
+        return false;
+    }
+
+    public void proximaCompra(boolean resposta){
+        
+    }
 }

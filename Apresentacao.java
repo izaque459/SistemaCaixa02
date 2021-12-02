@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 import Atendimento.Caixa;
+import Atendimento.Cliente;
 
 public class Apresentacao {
     public static void main(String[] args){
@@ -8,6 +9,7 @@ public class Apresentacao {
         System.out.print("Digite o nome do usuario: ");
         String entradaUsuario = entrada.nextLine();
         Caixa caixa = new Caixa(entradaUsuario);
+        Cliente cliente = new Cliente();
         Integer codigo;
         int qte;
 
@@ -17,9 +19,12 @@ public class Apresentacao {
             codigo = entrada.nextInt();
             System.out.print("Digite a quantidade: ");
             qte = entrada.nextInt();
-            if(caixa.adicionaProduto(codigo, qte))
+            if(caixa.adicionaProduto(codigo, qte)){
+                
+                cliente.compra(caixa.designaProduto());
+                System.out.println(cliente.exibeCompras());
                 System.out.println("Produto adiconado com sucesso.");
-            else
+            }else
                 System.out.println("Produto indisponivel ou quantidade errada ");
 
             entrada.nextLine();

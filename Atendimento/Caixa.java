@@ -16,7 +16,7 @@ public class Caixa implements ICaixa{
     private double totalComprasDinheiro = 0.0;
     private double totalDescontos =0.0;
     private int totalClientes = 0;
-    private RegistroProduto produtoDesignado ;
+    private String produtoDesignado ;
 
     Map<Integer,RegistroItem> items = new HashMap<>();
     Map<Integer,RegistroProduto> produtos = new HashMap<>();
@@ -75,7 +75,7 @@ public class Caixa implements ICaixa{
                 registroItem.decrementa(qte);
                 items.put(codigo,registroItem);
             }
-            produtoDesignado = registroProduto;
+            produtoDesignado = registroItem.retornaDescricaoItem()+"  "+registroItem.retornaPrecoItem()+"  "+qte;
             return true;
         }else{
             return false;
@@ -84,6 +84,6 @@ public class Caixa implements ICaixa{
     }
 
     public String designaProduto(){
-        return produtoDesignado.retornaDescricaoProduto()+Double.toString(produtoDesignado.retornaPrecoProduto())+Integer.toString(produtoDesignado.quantidadeAtual());
+        return produtoDesignado;
     }
 }
