@@ -20,4 +20,12 @@ public class RegistroItem implements IRegistro{
             quantidade = quantidade - n;
         }
     }
+
+    public String retornaDescricaoItem(){
+        return item.Descricao();
+    }
+
+    public String retornaPrecoItem(){
+        return item.PrecoUnitario();
+    }
 }

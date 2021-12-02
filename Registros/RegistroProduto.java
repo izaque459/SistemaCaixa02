@@ -21,4 +21,12 @@ public class RegistroProduto implements IRegistro {
             quantidade = quantidade + n;
         }
     }
+
+    public String retornaDescricaoProduto(){
+        return produto.Descricao();
+    }
+
+    public double retornaPrecoProduto(){
+        return produto.PrecoUnitario();
+    }
 }
