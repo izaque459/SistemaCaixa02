@@ -63,7 +63,7 @@ public class Caixa implements ICaixa{
 
         RegistroItem registroItem = items.get(codigo);
         RegistroProduto registroProduto = produtos.get(codigo) ;
-        if((registroItem != null)&&(registroItem.quantidadeAtual()>0)&&registroItem.quantidadeAtual()<qte){
+        if((registroItem != null)&&(registroItem.quantidadeAtual()>0)&&(registroItem.quantidadeAtual()>=qte)){
             if (registroProduto!=null) {
                 registroProduto.incrementa(qte);
                 registroItem.decrementa(qte);

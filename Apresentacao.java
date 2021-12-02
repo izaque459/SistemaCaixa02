@@ -20,7 +20,7 @@ public class Apresentacao {
             if(caixa.adicionaProduto(codigo, qte))
                 System.out.println("Produto adiconado com sucesso.");
             else
-                System.out.println("Produto indisponivel ou quantidade insuficiente ");
+                System.out.println("Produto indisponivel ou quantidade errada ");
 
             entrada.nextLine();
             System.out.print("Digite nome de usuario para finalizar expediente: ");
