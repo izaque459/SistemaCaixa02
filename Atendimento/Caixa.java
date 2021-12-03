@@ -99,10 +99,18 @@ public class Caixa implements ICaixa{
     }
 
     public void aceitaPagamento(boolean resposta){
+        totalCompras = totalCompras + totalPagar;
         if(resposta){
             totalDesconto = totalPagar*0.05;
             totalPagar = totalPagar - totalDesconto;
+            totalDescontos = totalDescontos + totalDesconto;
+            totalComprasDinheiro = totalComprasDinheiro + totalPagar;
+        }else{
+            totalComprasCartaoCredito = totalComprasCartaoCredito + totalPagar;
         }
+
+        totalClientes++;
+
     }
 
     public void verificaNovoCliente(){
