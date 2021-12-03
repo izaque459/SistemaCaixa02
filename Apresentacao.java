@@ -19,6 +19,8 @@ public class Apresentacao {
 
 
         while(!caixa.encerraExpediente()){
+
+
             while(cliente.adicionaItens()){
                 System.out.print("Digite o codigo o produto: ");
                 codigo = entrada.nextInt();
@@ -37,7 +39,11 @@ public class Apresentacao {
                 resposta = entrada.nextBoolean();
                 cliente.proximaCompra(resposta);
             }
+
+
             while(!cliente.pagaCompra()){
+                System.out.print("Total de compras do cliente atual:");
+                System.out.println(Double.toString(caixa.exibeTotalPagar()));
                 entrada.nextLine();
                 System.out.println("Digite forma de pagamento 1 para Dinheiro ou 2 para Cartao: ");
                 pag = entrada.nextInt();
@@ -48,6 +54,8 @@ public class Apresentacao {
                     else 
                         System.out.println("Digite opcao valida. ");
             }
+
+
             entrada.nextLine();
             System.out.print("Existe novo cliente? ");
             resposta=entrada.nextBoolean();

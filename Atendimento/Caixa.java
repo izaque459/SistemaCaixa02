@@ -15,6 +15,7 @@ public class Caixa implements ICaixa{
     private double totalComprasCartaoCredito =0.0;
     private double totalComprasDinheiro = 0.0;
     private double totalDescontos =0.0;
+    private double totalPagar = 0.0;
     private int totalClientes = 0;
     private String produtoDesignado ;
 
@@ -76,6 +77,7 @@ public class Caixa implements ICaixa{
                 items.put(codigo,registroItem);
             }
             produtoDesignado = registroItem.retornaDescricaoItem()+"  "+registroItem.retornaPrecoItem()+"  "+qte;
+            totalPagar = totalPagar + qte*Double.parseDouble(registroItem.retornaPrecoItem());
             return true;
         }else{
             return false;
@@ -85,5 +87,9 @@ public class Caixa implements ICaixa{
 
     public String designaProduto(){
         return produtoDesignado;
+    }
+
+    public double exibeTotalPagar(){
+        return totalPagar;
     }
 }
