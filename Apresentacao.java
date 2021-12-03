@@ -42,7 +42,7 @@ public class Apresentacao {
 
 
             while(!cliente.pagaCompra()){
-                System.out.print("Total de compras do cliente atual:");
+                System.out.print("Total de compras do cliente atual: ");
                 System.out.println(Double.toString(caixa.exibeTotalPagar()));
                 entrada.nextLine();
                 System.out.println("Digite forma de pagamento 1 para Dinheiro ou 2 para Cartao: ");
@@ -79,6 +79,19 @@ public class Apresentacao {
         }
 
         entrada.close();
+        System.out.println("Contabilizacao do sistema: ");
+        System.out.print("Total de compras:");
+        System.out.println(Double.toString(caixa.exibeTotalCompras()));
+        System.out.print("Total de compras com cartao de credito: ");
+        System.out.println(Double.toString(caixa.exibeTotalComprasCartaoCredito()));
+        System.out.print("Total de compras com dinheiro: ");
+        System.out.println(Double.toString(caixa.exibeTotalComprasDinheiro()));
+        System.out.print("Total de descontos: ");
+        System.out.println(Double.toString(caixa.exibeTotalDescontos()));
+        System.out.print("Total de Clientes: ");
+        System.out.println(Integer.toString(caixa.exibeTotalClientes()));
+
+
     }
     
 }
