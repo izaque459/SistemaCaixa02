@@ -1,0 +1,6 @@
+https://www.youtube.com/watch?v=9HFbPkq05M4
+
+Descrição: O sistema sem banco de dados quando iniciado pede o nome do usuario, sem esse mesmo nome não se encerra o sistema
+Para cada novo cliente é pedido um código e uma quantidade se o código não for o correto ou a quantidade não está em "estoque"
+aparece a mensagem "produto indisponível ou quantidade errada". Todas as perguntas são respondidades com true ou false, menos as 
+perguntas sobre a forma de pagamento, 1 para dinheiro ou 2 para cartao.

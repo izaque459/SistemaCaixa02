@@ -38,7 +38,7 @@ public class Caixa implements ICaixa{
         items.put(109, new RegistroItem(new Item("Uva passa Verdao 200 g", "3.88"), 70));
         items.put(110 ,new RegistroItem(new Item("Amendoim Torrado Verdao 250 g", "3.98"), 53));
         items.put(111, new RegistroItem(new Item("Milho doce Verdao 500 g", "4.88"), 9));
-        items.put(112, new RegistroItem(new Item("Pasta de amendoim integral Santa Helena 450 g", "9.97"), 12))
+        items.put(112, new RegistroItem(new Item("Pasta de amendoim integral Santa Helena 450 g", "9.97"), 12));
         items.put(113, new RegistroItem(new Item("Biscoito recheado Treloso 130 g", "1.59"), 69));
         items.put(114, new RegistroItem(new Item("Papel Higienico Personal Vip folha dupla 20 m LV 12 PG 11", "13.98"), 23));
     }
@@ -89,7 +89,7 @@ public class Caixa implements ICaixa{
                 registroItem.decrementa(qte);
                 items.put(codigo,registroItem);
             }
-            produtoDesignado = registroItem.retornaDescricaoItem()+"  "+registroItem.retornaPrecoItem()+"  "+qte;
+            produtoDesignado = registroItem.retornaDescricaoItem()+" | "+registroItem.retornaPrecoItem()+" | "+qte;
             totalPagar = totalPagar + qte*Double.parseDouble(registroItem.retornaPrecoItem());
             return true;
         }else{

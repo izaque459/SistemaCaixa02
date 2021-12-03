@@ -1,7 +1,7 @@
 package Atendimento;
 
 public class Cliente implements ICliente{
-    private String descricao = new String("        Descricao     Preco    Quantidade "); 
+    private String descricao = new String("                 Descricao     Preco    Quantidade "); 
     private boolean adiciona = true;
     private boolean paga = false;
     private TipoPagamento pagamento;

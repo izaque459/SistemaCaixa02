@@ -7,6 +7,7 @@ import Atendimento.TipoPagamento;
 public class Apresentacao {
     public static void main(String[] args){
         Scanner entrada = new Scanner(System.in);
+        System.out.println("------------SISTEMA DE CAIXA PARA MERCADINHO-----------");
         System.out.print("Digite o nome do usuario: ");
         String entradaUsuario = entrada.nextLine();
         Caixa caixa = new Caixa(entradaUsuario);
@@ -20,7 +21,7 @@ public class Apresentacao {
 
         while(!caixa.encerraExpediente()){
 
-
+            System.out.println(" ---------------------------------------------------------------- ");
             while(cliente.adicionaItens()){
                 System.out.print("Digite o codigo o produto: ");
                 codigo = entrada.nextInt();
@@ -40,7 +41,7 @@ public class Apresentacao {
                 cliente.proximaCompra(resposta);
             }
 
-
+            System.out.println(" ---------------------------------------------------------------- ");
             while(!cliente.pagaCompra()){
                 System.out.print("Total de compras do cliente atual: ");
                 System.out.println(Double.toString(caixa.exibeTotalPagar()));
@@ -62,7 +63,7 @@ public class Apresentacao {
 
             }
 
-
+            System.out.println(" ---------------------------------------------------------------- ");
             entrada.nextLine();
             System.out.print("Existe novo cliente? ");
             resposta=entrada.nextBoolean();
@@ -79,7 +80,8 @@ public class Apresentacao {
         }
 
         entrada.close();
-        System.out.println("Contabilizacao do sistema: ");
+        System.out.println(" ");
+        System.out.println("----------------------Contabilizacao do sistema: ");
         System.out.print("Total de compras:");
         System.out.println(Double.toString(caixa.exibeTotalCompras()));
         System.out.print("Total de compras com cartao de credito: ");
