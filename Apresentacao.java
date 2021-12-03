@@ -48,9 +48,18 @@ public class Apresentacao {
                     else 
                         System.out.println("Digite opcao valida. ");
             }
-            System.out.print("Digite nome de usuario para finalizar expediente: ");
-            entradaUsuario = entrada.nextLine();
-            caixa.sinalizaEncerramento(entradaUsuario);
+            entrada.nextLine();
+            System.out.print("Existe novo cliente? ");
+            resposta=entrada.nextBoolean();
+            if(resposta){
+                System.out.println("Novo cliente: ");
+                cliente.proximo();
+            }else{
+                entrada.nextLine();
+                System.out.print("Digite nome de usuario para finalizar expediente: ");
+                entradaUsuario = entrada.nextLine();
+                caixa.sinalizaEncerramento(entradaUsuario);
+            }
         }
 
         entrada.close();
