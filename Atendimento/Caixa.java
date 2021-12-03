@@ -16,6 +16,7 @@ public class Caixa implements ICaixa{
     private double totalComprasDinheiro = 0.0;
     private double totalDescontos =0.0;
     private double totalPagar = 0.0;
+    private double totalDesconto = 0.0;
     private int totalClientes = 0;
     private String produtoDesignado ;
 
@@ -91,5 +92,21 @@ public class Caixa implements ICaixa{
 
     public double exibeTotalPagar(){
         return totalPagar;
+    }
+
+    public double exibeTotalDesconto(){
+        return totalDesconto;
+    }
+
+    public void aceitaPagamento(boolean resposta){
+        if(resposta){
+            totalDesconto = totalPagar*0.05;
+            totalPagar = totalPagar - totalDesconto;
+        }
+    }
+
+    public void verificaNovoCliente(){
+        totalPagar=0.0;
+        totalDesconto=0.0;
     }
 }

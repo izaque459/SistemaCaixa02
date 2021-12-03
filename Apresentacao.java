@@ -48,11 +48,18 @@ public class Apresentacao {
                 System.out.println("Digite forma de pagamento 1 para Dinheiro ou 2 para Cartao: ");
                 pag = entrada.nextInt();
                 if(pag==1)
-                    cliente.informaPagamento(TipoPagamento.Dinheiro);
+                    caixa.aceitaPagamento(cliente.informaPagamento(TipoPagamento.Dinheiro));
                 else if(pag==2)
-                    cliente.informaPagamento(TipoPagamento.CartaoCredito);
+                    caixa.aceitaPagamento(cliente.informaPagamento(TipoPagamento.CartaoCredito));
                     else 
                         System.out.println("Digite opcao valida. ");
+                if(cliente.pagaCompra()){
+                    System.out.print("Total a pagar: ");
+                    System.out.println(Double.toString(caixa.exibeTotalPagar()));
+                    System.out.print("Total de descontos: ");
+                    System.out.println(Double.toString(caixa.exibeTotalDesconto()));
+                }
+
             }
 
 
@@ -62,6 +69,7 @@ public class Apresentacao {
             if(resposta){
                 System.out.println("Novo cliente: ");
                 cliente.proximo();
+                caixa.verificaNovoCliente();
             }else{
                 entrada.nextLine();
                 System.out.print("Digite nome de usuario para finalizar expediente: ");

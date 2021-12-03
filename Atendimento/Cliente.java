@@ -26,7 +26,8 @@ public class Cliente implements ICliente{
         return paga;
     }
 
-    public void informaPagamento(TipoPagamento pagamento){
+    public boolean informaPagamento(TipoPagamento pagamento){
+        boolean retorno = false;
         this.pagamento=pagamento;
         switch(this.pagamento){
             case CartaoCredito:
@@ -34,10 +35,13 @@ public class Cliente implements ICliente{
                 break;
             case Dinheiro:
                 paga=true;
+                retorno = true;
                 break;
             default:
                 break;
         }
+
+        return retorno;
     }
 
     public void proximo(){
